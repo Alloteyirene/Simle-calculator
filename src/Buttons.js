@@ -15,21 +15,15 @@ export default function Buttons() {
         return digits;
         //this code fragment could be an alternative to hard coding the numbers.
           It's a for loop that displays the numbers. }*/
- const [result, setResult] = useState([])
- const [operation, setOperations]=useState(null)
- const [total,setTotal]=useState(false)
+ const [result, setResult] = useState("")
+
 
   const handleClick= (e)=>{
-      if (result.includes('.') && e.target.innerText ==='.')
-      return
-    console.log(setResult(result.concat(e.target.name)));
+   console.log(setResult(result.concat(e.target.name)))
   }
 
-
    const calculate=()=>{
-    // console.log(setResult(Function(result).toString()));
-    // console.log(setResult(anonymous()))
-    setResult(eval.result);
+    setResult(eval(result).toString())
    }
 
    const clear =()=>{
@@ -42,9 +36,9 @@ export default function Buttons() {
     return (<div className='container'>
          
               <div className='screen'>
-             <AccessTimeIcon className='hist'/> 
+             {/*<AccessTimeIcon className='hist'/> */}
              {result}
-              <KeyboardBackspaceIcon  className='back' onClick={backspace}/>
+              {/*<KeyboardBackspaceIcon  className='back' onClick={backspace}/>*/}
               </div>
                  
              <div  className='wrapper'>
@@ -56,7 +50,7 @@ export default function Buttons() {
                  <button name='7' onClick={handleClick} className='butt' >7</button>
                  <button name='8' onClick={handleClick} className='butt'>8</button>
                  <button name='9' onClick={handleClick} className='butt'>9</button>
-                 <button name='x' onClick={handleClick} className='butt3'>x</button> 
+                 <button name='*' onClick={handleClick} className='butt3'>x</button> 
                  <button name='4' onClick={handleClick} className='butt'>4</button>
                  <button name='5' onClick={handleClick} className='butt'>5</button> 
                  <button name='6' onClick={handleClick} className='butt'>6</button> 
